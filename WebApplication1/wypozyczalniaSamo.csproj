@@ -111,6 +111,10 @@
     <Compile Include="Migrations\202104080637206_InitialCreate.designer.cs">
       <DependentUpon>202104080637206_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104150745407_DodaniePolaCarRegistration.cs" />
+    <Compile Include="Migrations\202104150745407_DodaniePolaCarRegistration.designer.cs">
+      <DependentUpon>202104150745407_DodaniePolaCarRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Car.cs" />
@@ -136,6 +140,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202104080637206_InitialCreate.resx">
       <DependentUpon>202104080637206_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104150745407_DodaniePolaCarRegistration.resx">
+      <DependentUpon>202104150745407_DodaniePolaCarRegistration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

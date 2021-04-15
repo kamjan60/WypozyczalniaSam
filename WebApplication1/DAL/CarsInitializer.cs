@@ -53,17 +53,17 @@ namespace WebApplication1.DAL
             { 
                 new Car
                 {
-                    CarID = 1,
                     Mark = "Ford",
                     Model = "Focus",
+                    CarRegistration = "CB000001",
                     CategoryID = 3,
                     AddDate = DateTime.Now
                 },
                 new Car
                 {
-                    CarID = 2,
                     Mark = "Honda",
                     Model = "Civic",
+                    CarRegistration = "CB000002",
                     CategoryID = 2,
                     AddDate = DateTime.Now
                 },
@@ -71,13 +71,18 @@ namespace WebApplication1.DAL
                 {
                     Mark = "Nissan",
                     Model = "Skyline",
+                    CarRegistration = "CB000003",
                     CategoryID = 2,
                     AddDate = DateTime.Now
                 }
             };
             foreach (var car in cars)
             {
-                context.Cars.AddOrUpdate(car);
+                //Zmiana przeglądania bazy, nie po CarID tylko przez CarRegistration.
+                //add-Migration 'nazwa'     dodanie migracji
+                //coś nie działą i chce wrócić - update-Database-TargetMigration:podajemyNazweMigracji
+                //update-DataBase odświeżenie bazy danych
+                context.Cars.AddOrUpdate(c=>c.CarRegistration,car);
             }
 
             context.SaveChanges();

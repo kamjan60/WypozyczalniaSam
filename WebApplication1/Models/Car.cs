@@ -9,6 +9,8 @@ namespace WebApplication1.Models
     public class Car
     {
         public int CarID { get; set; }
+        [Required(ErrorMessage = "Wprowadź numer rejestracyjny")]
+        public string CarRegistration { get; set; }
 
         [Required(ErrorMessage = "Wprowadź markę samochodu")]
         public string Mark { get; set; }
