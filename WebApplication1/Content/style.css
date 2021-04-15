@@ -1,0 +1,46 @@
+body {
+  background-color: chocolate;
+  margin: 0;
+}
+
+#menu {
+  text-align: right;
+  height: 300px;
+  padding: 30px;
+  background-image: url("AutoBMW.jpg");
+  background-size: cover;
+  font-size: 50px;
+}
+
+a {
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+  text-shadow:5px 5px 10px black; 
+}
+
+a:hover
+{
+  text-shadow: none;
+}
+
+table {
+  width: 100%;
+  font-size: 50px;
+  text-align: center;
+}
+
+#stopka {
+  font-size: 20px;
+  text-align: right;
+  padding: 30px;
+  background-color:brown;
+}
+#floatBG {
+  background-image: url("AutoBMW.jpg"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height:250px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
