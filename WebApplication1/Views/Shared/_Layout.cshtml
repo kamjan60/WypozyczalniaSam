@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<WebApplication1.Models.Category>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -9,10 +10,13 @@
 <body>
     <header>
         <div id="floatBG">
-            <a href="combi.html">Combi</a>
-            <a href="sedan.html">Sedan</a>
-            <a href="hatchback.html">Hatchback</a>
-
+            
+            @foreach (var category in Model)
+            {
+            <a href="@Url.Action("List","Cars",new { categoryName = category.Name })">@category.Name</a>
+            }
+            @*           Nazwa akcji ^     ^Nazwa kontrolera (bez Controller)*@
+            @*Note: moze sie nie ladowac czesc statyczna (wynika to z braku czesci dynamicznej)*@
         </div>
     </header>
     <div>
@@ -22,7 +26,7 @@
     <footer>
         <div id="stopka">
             <a href="@Url.Action("StronyStatyczne","Home",new { nazwa = "Onas" })">O nas</a>
-            <a href="@Url.Action("StronyStatyczne","Home",new { nazwa = "Regulamin" })" >Regulamin</a>
+            <a href="@Url.Action("StronyStatyczne","Home",new { nazwa = "Regulamin" })">Regulamin</a>
             <a href="@Url.Action("StronyStatyczne", "Home",new {nazwa = "MetodyPlatnosci"})">Metody płatności</a>
             <a href="@Url.Action("StronyStatyczne","Home",new { nazwa = "Kontakt"})">Kontakt</a>
         </div>

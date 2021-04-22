@@ -16,7 +16,11 @@ namespace WebApplication1.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+
+            //Zebranie kategorii do listy i wrzucenie ich widoku
+            var categories = db.Categories.ToList();
+            
+            return View(categories);
         }
 
         //Dodanie metody zwracającej widok strony statycznej
