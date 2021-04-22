@@ -21,10 +21,10 @@
 
     <footer>
         <div id="stopka">
-            <a href="onas.html">O nas</a>
-            <a href="regulamin.html">Regulamin</a>
-            <a href="metodyPlatnosci.html">Metody płatności</a>
-            <a href="kontakt.html">Kontakt</a>
+            <a href="@Url.Action("StronyStatyczne","Home",new { nazwa = "Onas" })">O nas</a>
+            <a href="@Url.Action("StronyStatyczne","Home",new { nazwa = "Regulamin" })" >Regulamin</a>
+            <a href="@Url.Action("StronyStatyczne", "Home",new {nazwa = "MetodyPlatnosci"})">Metody płatności</a>
+            <a href="@Url.Action("StronyStatyczne","Home",new { nazwa = "Kontakt"})">Kontakt</a>
         </div>
     </footer>
 </body>

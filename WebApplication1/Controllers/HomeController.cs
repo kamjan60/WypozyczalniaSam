@@ -16,16 +16,13 @@ namespace WebApplication1.Controllers
         // GET: Home
         public ActionResult Index()
         {
-           Category category = new Category()
-            {
-                CategoryID = 1,
-                Name="Van",
-                Desc = "Samochod rodzinny"
-            };
-            db.Categories.AddOrUpdate(category);
-            db.SaveChanges();
-
             return View();
+        }
+
+        //Dodanie metody zwracającej widok strony statycznej
+        public ActionResult StronyStatyczne(string nazwa)
+        {
+            return View(nazwa);
         }
     }
 }

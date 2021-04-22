@@ -13,11 +13,14 @@ namespace WebApplication1
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             
+            //Dodanie wlasnego routa:
+            //Sprawdzic Web.config -> znaczniki : system.webServer -> runAllManagedModulesForAllRequests="true"            
             routes.MapRoute(
-               name: "Statyczne",
-               url: "info/{nazwa}",
-               defaults: new { controller = "Home", action = "StronyStopka"}
+               name: "StronyStatyczne",
+               url: "stopka/{nazwa}",
+               defaults: new { controller = "Home", action = "StronyStatyczne"}
            );
+            // Nazwa kontrolera (w tym wypadku HomeController, nazwa metody akcji, tutaj: StronyStatyczne
 
             routes.MapRoute(
                 name: "Trasa1",
