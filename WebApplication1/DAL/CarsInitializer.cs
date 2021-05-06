@@ -50,14 +50,17 @@ namespace WebApplication1.DAL
             context.SaveChanges();
 
             var cars = new List<Car>()
-            { 
+            {
                 new Car
                 {
                     Mark = "Ford",
                     Model = "Focus",
                     CarRegistration = "CB000001",
                     CategoryID = 3,
-                    AddDate = DateTime.Now
+                    AddDate = new DateTime(2007,3,14),
+                    Price = 30000,
+                    isInStock = true,
+                    PosterName = "fordFocus.jpg"
                 },
                 new Car
                 {
@@ -65,7 +68,10 @@ namespace WebApplication1.DAL
                     Model = "Civic",
                     CarRegistration = "CB000002",
                     CategoryID = 2,
-                    AddDate = DateTime.Now
+                    AddDate = new DateTime(2010,6,1),
+                    Price = 42000,
+                    isInStock = true,
+                    PosterName = "hondaCivic.jpg"
                 },
                 new Car
                 {
@@ -73,7 +79,32 @@ namespace WebApplication1.DAL
                     Model = "Skyline",
                     CarRegistration = "CB000003",
                     CategoryID = 2,
-                    AddDate = DateTime.Now
+                    AddDate = new DateTime(2015,3,9),
+                    Price = 25000,
+                    isInStock = true,
+                    PosterName = "nissanSkyline.jpg"
+                },
+                new Car
+                {
+                    Mark = "Nissan",
+                    Model = "Juke",
+                    CarRegistration = "CB000004",
+                    CategoryID=1,
+                    AddDate = new DateTime(2010,5,7),
+                    Price = 44000,
+                    isInStock = false,
+                    PosterName = "nissanJuke.jpg"
+                },
+                new Car
+                {
+                    Mark = "Kia",
+                    Model = "Ceed",
+                    CarRegistration = "CB000005",
+                    CategoryID=4,
+                    AddDate = new DateTime(2021,4,29),
+                    Price = 52000,
+                    isInStock = true,
+                    PosterName = "kiaCeed.jpg"
                 }
             };
             foreach (var car in cars)

@@ -1,0 +1,31 @@
+﻿@model WebApplication1.Models.Car
+@using WebApplication1.Infrastructure
+@{
+    ViewBag.Title = "Szczegóły auta";
+}
+
+<h2>Szczegóły</h2>
+<div id="szczegoly">
+    <table id="tableSzczegoly">
+        <tr>
+            <td id="carsFromCategory">
+                <h2>@Model.Category.Name</h2>
+                @Html.Action("CarsFromCategory","Cars", new { categoryName = Model.Category.Name})
+            </td>
+            <td id="obrazek">
+                <img src="@Url.PostersPath(Model.PosterName)">
+            </td>
+            <td>
+                <ul>
+                    <li><a>Marka: @Model.Mark</a></li>
+                    <li><a>Model: @Model.Model</a></li>
+                    <li><a>Opis: @Model.CarRegistration</a></li>
+                    <li><a>Cena: @Model.Price</a></li>
+                    <li><a>Data dodania: @Model.AddDate</a></li>
+                    <li><a>Dostępność: @Model.isInStock</a></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+

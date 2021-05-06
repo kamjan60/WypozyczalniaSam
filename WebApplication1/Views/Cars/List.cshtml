@@ -1,16 +1,34 @@
-﻿@model IEnumerable<WebApplication1.Models.Car>
-
+﻿@model WebApplication1.VievModels.DetailsViewModel
+@using WebApplication1.Infrastructure
 @{
     ViewBag.Title = "List";
-    Layout = null;
+    //Layout = null;
 }
 
+<h2>Top 3 najnowsze</h2>
+<table style=" background-color: cornflowerblue">
+    <tr>
+        @foreach (var car in Model.Top3NewestCars)
+            {
+                <td>
+                    <a href=" @Url.Action("Details","Cars",new { id = car.CarID })">
+                        <img src="@Url.PostersPath(car.PosterName)" width="350px" />
+                    </a>
+                </td>
+            }
+    </tr>
+</table>
+<h2>@Model.Category.Name - @Model.Category.Desc </h2>
 <div id="nowosci">
     <table border=1px>
-        @foreach (var car in Model)
+        @foreach (var car in Model.CarsFromCategory)
         {
             <tr>
-                <td><img src="nowkaSztuka.jpg" width=33%></td>
+                <td>
+                    <a href=" @Url.Action("Details","Cars",new { id = car.CarID })">
+                        <img src="@Url.PostersPath(car.PosterName)" width=500px>\
+                    </a>
+                </td>
                 <td>@car.Mark @car.Model</td>
                 <td>@car.Price PLN </td>
                 <td>Dodaj do koszyka</td>

@@ -1,5 +1,4 @@
-﻿@model IEnumerable<WebApplication1.Models.Category>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -9,15 +8,7 @@
 </head>
 <body>
     <header>
-        <div id="floatBG">
-            
-            @foreach (var category in Model)
-            {
-            <a href="@Url.Action("List","Cars",new { categoryName = category.Name })">@category.Name</a>
-            }
-            @*           Nazwa akcji ^     ^Nazwa kontrolera (bez Controller)*@
-            @*Note: moze sie nie ladowac czesc statyczna (wynika to z braku czesci dynamicznej)*@
-        </div>
+        @Html.Action("KategorieMenu", "Cars")
     </header>
     <div>
         @RenderBody()

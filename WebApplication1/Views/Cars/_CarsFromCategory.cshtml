@@ -1,0 +1,12 @@
+﻿@model IEnumerable<WebApplication1.Models.Car>
+
+<ul>
+    @foreach (var car in @Model)
+            {
+                <li>
+                    <a href=" @Url.Action("Details", "Cars", new { id = car.CarID})">
+                        @car.Mark @car.Model
+                    </a>
+                </li>
+            }
+</ul>

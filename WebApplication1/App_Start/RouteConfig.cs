@@ -20,7 +20,12 @@ namespace WebApplication1
                 defaults: new { controller = "Cars", action = "List" } 
             );
             //Dodanie wlasnego routa:
-            //Sprawdzic Web.config -> znaczniki : system.webServer -> runAllManagedModulesForAllRequests="true"            
+            //Sprawdzic Web.config -> znaczniki : system.webServer -> runAllManagedModulesForAllRequests="true"
+            routes.MapRoute(
+                name: "Details",
+                url: "details_{id}.html",
+                defaults: new { controller = "Cars", action = "Details" }
+            );
             routes.MapRoute(
                name: "StronyStatyczne",
                url: "stopka/{nazwa}",

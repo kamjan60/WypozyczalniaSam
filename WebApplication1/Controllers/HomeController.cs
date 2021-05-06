@@ -18,9 +18,9 @@ namespace WebApplication1.Controllers
         {
 
             //Zebranie kategorii do listy i wrzucenie ich widoku
-            var categories = db.Categories.ToList();
+            //var categories = db.Categories.ToList();
             
-            return View(categories);
+            return View();
         }
 
         //Dodanie metody zwracającej widok strony statycznej

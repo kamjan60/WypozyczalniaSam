@@ -22,8 +22,10 @@ namespace WebApplication1.Models
         public string Desc { get; set; }
         public decimal Price { get; set; }
         public DateTime AddDate { get; set; }
+        public string PosterName { get; set; }
         public int CategoryID { get; set; }
         public virtual Category Category { get; set; }
+        public bool isInStock { get; set; }
 
 
     }

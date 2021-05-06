@@ -95,6 +95,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AutaGrafiki\fordFocus.jpg" />
+    <Content Include="Content\AutaGrafiki\hondaCivic.jpg" />
+    <Content Include="Content\AutaGrafiki\kiaCeed.jpg" />
+    <Content Include="Content\AutaGrafiki\nissanJuke.jpg" />
+    <Content Include="Content\AutaGrafiki\nissanSkyline.jpg" />
     <Content Include="Content\AutoBMW.jpg" />
     <Content Include="Content\index.html" />
     <Content Include="Content\nowkaSztuka.jpg" />
@@ -113,6 +118,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\AppConfig.cs" />
+    <Compile Include="Infrastructure\UrlHelpers.cs" />
     <Compile Include="Migrations\202104080637206_InitialCreate.cs" />
     <Compile Include="Migrations\202104080637206_InitialCreate.designer.cs">
       <DependentUpon>202104080637206_InitialCreate.cs</DependentUpon>
@@ -121,10 +128,23 @@
     <Compile Include="Migrations\202104150745407_DodaniePolaCarRegistration.designer.cs">
       <DependentUpon>202104150745407_DodaniePolaCarRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104290703152_dodanie PosterName.cs" />
+    <Compile Include="Migrations\202104290703152_dodanie PosterName.designer.cs">
+      <DependentUpon>202104290703152_dodanie PosterName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105060752521_dodanieCen.cs" />
+    <Compile Include="Migrations\202105060752521_dodanieCen.designer.cs">
+      <DependentUpon>202105060752521_dodanieCen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105060833173_dodanieDostepnosci.cs" />
+    <Compile Include="Migrations\202105060833173_dodanieDostepnosci.designer.cs">
+      <DependentUpon>202105060833173_dodanieDostepnosci.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\DetailsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -138,6 +158,9 @@
     <Content Include="Views\Home\Onas.cshtml" />
     <Content Include="Views\Home\Regulamin.cshtml" />
     <Content Include="Views\Cars\List.cshtml" />
+    <Content Include="Views\Shared\_KategorieMenu.cshtml" />
+    <Content Include="Views\Cars\Details.cshtml" />
+    <Content Include="Views\Cars\_CarsFromCategory.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -155,6 +178,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104150745407_DodaniePolaCarRegistration.resx">
       <DependentUpon>202104150745407_DodaniePolaCarRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104290703152_dodanie PosterName.resx">
+      <DependentUpon>202104290703152_dodanie PosterName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105060752521_dodanieCen.resx">
+      <DependentUpon>202105060752521_dodanieCen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105060833173_dodanieDostepnosci.resx">
+      <DependentUpon>202105060833173_dodanieDostepnosci.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
