@@ -31,7 +31,7 @@
                 </td>
                 <td>@car.Mark @car.Model</td>
                 <td>@car.Price PLN </td>
-                <td>Dodaj do koszyka</td>
+                <td><a href="@Url.Action("AddToCart","Cart",new { id = car.CarID })">🛒</a></td>
             </tr>
         }
     </table>

@@ -1,0 +1,45 @@
+﻿@model WebApplication1.ViewModels.CartViewModel
+@using WebApplication1.Infrastructure
+
+<h2>Twój koszyk</h2>
+<table id="koszykTabela">
+    @foreach (var item in Model.CartItems)
+    {
+        <tr id="cartItem-@item.Car.CarID">
+            <td><a href=" @Url.Action("Details","Cars",new { id = item.Car.CarID })"><img src="@Url.PostersPath(item.Car.PosterName)" width="200px" /></a></td>
+            <td><a href="@Url.Action("Details","Cars",new { id = item.Car.CarID})">@item.Car.Mark @item.Car.Model</td>
+            <td>Ilość: <span id="itemQuantity-@item.Car.CarID">@item.Quantity</span></td>
+            <td>Cena: @item.Value zł</td>
+            <td><a href="#" class="trash" data-id="@item.Car.CarID">&#128465;</a></td>
+        </tr>
+    }
+</table>
+<div id="CenaCalkowita" style="">
+    Razem: @Model.TotalPrice zł
+</div>
+@section Scripts
+{
+    <script src="~/Scripts/jquery-3.6.0.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+    <script type="text/javascript">
+        $(".trash").click(function () {
+            var idCartItem = $(this).data("id");
+
+            if (idCartItem !== '') {
+                $.post("/Cart/RemoveFromCart", { "id": idCartItem }, function (response) {
+                    if (response.itemQuantity == 0) {
+                        $("#cartItem-" + response.itemId).fadeOut("slow");
+                    } else {
+                        $("#itemQuantity-" + response.itemId).text(response.itemQuantity);
+                    }
+
+                    $("#CenaCalkowita").text("Razem: " + response.cartValue + " zł");
+                    $("#TotalPrice").text(response.cartValue);
+                    $("#CartQuantity").text(response.cartQuantity);
+                });
+            }
+        });
+    </script>
+}
+

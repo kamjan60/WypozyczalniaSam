@@ -50,5 +50,6 @@ namespace WebApplication1.Controllers
             return PartialView("_CarsFromCategory", category.Cars.ToList());
         }
         //partial widok dodajemy z _przedNazwą - ogólnie przyjęta zasada
+
     }
 }

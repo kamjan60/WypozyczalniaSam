@@ -1,9 +1,11 @@
 ﻿@model IEnumerable<WebApplication1.Models.Category>
-<div id="floatBG">
+<div id="menu">
 
     @foreach (var category in Model)
     {
-<a href="@Url.Action("List","Cars",new { categoryName = category.Name })">@category.Name</a>            }
-    @*           Nazwa akcji ^     ^Nazwa kontrolera (bez Controller)*@
-    @*Note: moze sie nie ladowac czesc statyczna (wynika to z braku czesci dynamicznej)*@
+        <a href="@Url.Action("List", "Cars", new { categoryName = category.Name })">@category.Name</a>            
+        @*           Nazwa akcji ^     ^Nazwa kontrolera (bez Controller)*@
+        @*Note: moze sie nie ladowac czesc statyczna (wynika to z braku czesci dynamicznej)*@
+    }
+    <a href="@Url.Action("Index", "Cart")">&#128717; (<span id="CartQuantity">@Html.Action("GetCartQuantity", "Cart")</span>)</a>
 </div>
